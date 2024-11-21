@@ -9,18 +9,24 @@ namespace PDKPCPPGUI {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-
+	/// <summary>
+	/// Summary for MyForm
+	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
 		MyForm(void)
 		{
 			InitializeComponent();
-			
+			//
+			//TODO: Add the constructor code here
+			//
 		}
 
 	protected:
-		
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
 		~MyForm()
 		{
 			if (components)
@@ -47,11 +53,16 @@ namespace PDKPCPPGUI {
 
 
 	private:
-		
-		System::ComponentModel::Container ^components;
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
@@ -212,7 +223,7 @@ namespace PDKPCPPGUI {
 			this->checkBox1->ForeColor = System::Drawing::Color::White;
 			this->checkBox1->Location = System::Drawing::Point(89, 312);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(189, 24);
+			this->checkBox1->Size = System::Drawing::Size(254, 24);
 			this->checkBox1->TabIndex = 11;
 			this->checkBox1->Text = L"Data anda tidak akan disimpan";
 			this->checkBox1->UseVisualStyleBackColor = false;
@@ -261,47 +272,47 @@ namespace PDKPCPPGUI {
 #pragma endregion
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	Application::Exit();
-}
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (checkBox1->Checked)
-	{
-		button1->Enabled = true;
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		Application::Exit();
 	}
-	else {
-		button1->Enabled = false;
-	}
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	//((modul 2 pengondisian)
-	if (textBox1->Text == "Ivandra") {
-		if (textBox2->Text == "racing") {
-			this->Hide();
-			MyForm1 obj;
-			obj.ShowDialog();
-			Application::Exit();
+	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (checkBox1->Checked) //(modul 2 pengondisian)
+		{
+			button1->Enabled = true;
 		}
 		else {
-			MessageBox::Show("Incorrect Password", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			button1->Enabled = false;
 		}
 	}
-	else {
-		MessageBox::Show("Incorrect Username", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		//((modul 2 pengondisian)
+		if (textBox1->Text == "Ivandra") {
+			if (textBox2->Text == "racing") {
+				this->Hide();
+				MyForm1 obj;
+				obj.ShowDialog();
+				Application::Exit();
+			}
+			else {
+				MessageBox::Show("Incorrect Password", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+		}
+		else {
+			MessageBox::Show("Incorrect Username", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+
+
 	}
-	
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
-
-}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-
-}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-	MessageBox::Show("IVAN", "KALKU BMI", MessageBoxButtons::OK, MessageBoxIcon::Information);
-}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	}
+	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageBox::Show("IVAN", "KALKU BMI", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }
