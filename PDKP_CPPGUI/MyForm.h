@@ -225,7 +225,7 @@ namespace PDKPCPPGUI {
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(189, 24);
 			this->checkBox1->TabIndex = 11;
-			this->checkBox1->Text = L"Saya ingin hitung BMI";
+			this->checkBox1->Text = L"Data anda tidak akan disimpan";
 			this->checkBox1->UseVisualStyleBackColor = false;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox1_CheckedChanged);
 			// 
