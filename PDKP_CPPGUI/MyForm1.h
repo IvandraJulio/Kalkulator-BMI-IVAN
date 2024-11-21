@@ -9,17 +9,24 @@ namespace PDKPCPPGUI {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	/// <summary>
+	/// Summary for MyForm1
+	/// </summary>
 	public ref class MyForm1 : public System::Windows::Forms::Form
 	{
 	public:
 		MyForm1(void)
 		{
 			InitializeComponent();
-		
+			//
+			//TODO: Add the constructor code here
+			//
 		}
 
 	protected:
-		
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
 		~MyForm1()
 		{
 			if (components)
@@ -46,11 +53,16 @@ namespace PDKPCPPGUI {
 	protected:
 
 	private:
-		
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm1::typeid));
@@ -236,12 +248,12 @@ namespace PDKPCPPGUI {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		                  //(method modul 4)
-		//(function modul 4)
+		//(method modul 4)
+//(function modul 4)
 		Application::Exit();
 	}
-	//(class modul 5 OOP)
-	private: 
+		   //(class modul 5 OOP)
+	private:
 		//(tipe data modul 1)
 		double weight;
 		double height;
@@ -256,46 +268,46 @@ namespace PDKPCPPGUI {
 		}
 
 		void setHeight(double h) {
-			height = h / 100.0; 
+			height = h / 100.0;
 		}
 
 		double getHeight() {
 			return height;
 		}
 
-private: System::Void btn_bmi_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	double Bmi;
-
-	try
+	private: System::Void btn_bmi_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		setWeight(Convert::ToDouble(textBox1->Text));
-		setHeight(Convert::ToDouble(textBox2->Text));
+		double Bmi;
 
-		Bmi = getWeight() / (getHeight() * getHeight());
+		try
+		{
+			setWeight(Convert::ToDouble(textBox1->Text));
+			setHeight(Convert::ToDouble(textBox2->Text));
 
-		if (Bmi < 18.5)
-		{
-			label5->Text = Bmi.ToString("F2") + "\nKekurangan berat badan \nPilih makanan yang padat akan kalori";
+			Bmi = getWeight() / (getHeight() * getHeight());
+
+			if (Bmi < 18.5)
+			{
+				label5->Text = Bmi.ToString("F2") + "\nKekurangan berat badan \nPilih makanan yang padat akan kalori";
+			}
+			else if (Bmi >= 18.5 && Bmi <= 24.9)
+			{
+				label5->Text = Bmi.ToString("F2") + "\nBerat badan anda ideal \nBagus, Pastikan kalori sesuai \ndengan kebutuhan harian";
+			}
+			else if (Bmi >= 25 && Bmi <= 29.9)
+			{
+				label5->Text = Bmi.ToString("F2") + "\nBerat badan anda berlebih \nLakukan olahraga dan diet";
+			}
+			else if (Bmi >= 30)
+			{
+				label5->Text = Bmi.ToString("F2") + "\nBerat badan anda obesitas \nLakukan diet dan temui dokter untuk konsul";
+			}
 		}
-		else if (Bmi >= 18.5 && Bmi <= 24.9)
+		catch (Exception^ ex)
 		{
-			label5->Text = Bmi.ToString("F2") + "\nBerat badan anda ideal \nBagus, Pastikan kalori sesuai \ndengan kebutuhan harian";
-		}
-		else if (Bmi >= 25 && Bmi <= 29.9)
-		{
-			label5->Text = Bmi.ToString("F2") + "\nBerat badan anda berlebih \nLakukan olahraga dan diet";
-		}
-		else if (Bmi >= 30)
-		{
-			label5->Text = Bmi.ToString("F2") + "\nBerat badan anda obesitas \nLakukan diet dan temui dokter untuk konsul";
+			MessageBox::Show("Masukkan berat dan tinggi badan secara benar", "Input Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-	catch (Exception^ ex)
-	{
-		MessageBox::Show("Masukkan berat dan tinggi badan secara benar", "Input Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
-}
 
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -303,4 +315,3 @@ private: System::Void btn_bmi_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	};
 }
-
